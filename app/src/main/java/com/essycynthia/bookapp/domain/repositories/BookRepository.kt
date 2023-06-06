@@ -21,7 +21,7 @@ interface BookRepository {
     suspend fun getArtBooks(): List<BooksDto>
     suspend fun getTravelBooks(): List<BooksDto>
     suspend fun getSpanishBooks(): List<BooksDto>
-    suspend fun getBookDetail(id:Int): BookDetailDto
+    suspend fun getBookDetail(id:String): BookDetailDto
 
 
 

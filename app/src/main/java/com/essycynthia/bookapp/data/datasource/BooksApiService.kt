@@ -55,7 +55,7 @@ interface BooksApiService {
     suspend fun getTravelBooks(): List<BooksDto>
 
     @GET("/books?ids={id}")
-    suspend fun getBookDetail(@Path("id")id:Int): BookDetailDto
+    suspend fun getBookDetail(@Path("id")id:String): BookDetailDto
 
 
 }

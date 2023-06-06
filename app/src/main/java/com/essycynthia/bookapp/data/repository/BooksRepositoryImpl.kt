@@ -60,8 +60,8 @@ class BooksRepositoryImpl @Inject constructor(private val booksApiService: Books
         return booksApiService.getSpanishBooks()
     }
 
-    override suspend fun getBookDetail(id: Int): BookDetailDto {
-        return booksApiService.getBookDetail(id)
+    override suspend fun getBookDetail(id: String): BookDetailDto {
+        return booksApiService.getBookDetail("id")
     }
 
 

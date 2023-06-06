@@ -11,7 +11,7 @@ import java.io.IOException
 import javax.inject.Inject
 
 class ChildrenBooksCases @Inject constructor(val bookRepository: BookRepository) {
-    suspend operator fun invoke(): Flow<Resource<List<Books>>> = flow{
+     operator fun invoke(): Flow<Resource<List<Books>>> = flow{
         try {
             emit(Resource.Loading())
             val childrenBooks=bookRepository.getChildrenBooks().map { it.toBooks() }

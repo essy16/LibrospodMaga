@@ -2,6 +2,8 @@ package com.essycynthia.bookapp.domain.use_cases.books_cases.getbooksdetails_cas
 
 import com.essycynthia.bookapp.common.Resource
 import com.essycynthia.bookapp.data.dto.BookDetailDto
+import com.essycynthia.bookapp.data.dto.toBookDetail
+import com.essycynthia.bookapp.domain.models.BookDetail
 import com.essycynthia.bookapp.domain.repositories.BookRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -10,10 +12,10 @@ import java.io.IOException
 import javax.inject.Inject
 
 class BookDetailCase @Inject constructor(val bookRepository: BookRepository) {
-    suspend operator fun invoke(id:Int): Flow<Resource<BookDetailDto>> = flow {
+     operator fun invoke(id:String): Flow<Resource<BookDetail>> = flow {
         try {
             emit(Resource.Loading())
-            val book=bookRepository.getBookDetail(id)
+            val book=bookRepository.getBookDetail("id").toBookDetail()
             emit(Resource.Success(book))
 
         } catch (e: HttpException) {

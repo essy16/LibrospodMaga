@@ -10,7 +10,7 @@ import retrofit2.HttpException
 import java.io.IOException
 
 class FantasyBooksCases (val bookRepository: BookRepository) {
-    suspend operator fun invoke():Flow<Resource<List<Books>>> = flow {
+     operator fun invoke():Flow<Resource<List<Books>>> = flow {
         try {
             emit(Resource.Loading())
             val fantasyBooks=bookRepository.getFantasyBooks().map { it.toBooks() }
