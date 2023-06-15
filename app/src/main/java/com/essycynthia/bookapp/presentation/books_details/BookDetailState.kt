@@ -1,7 +1,6 @@
-package com.essycynthia.bookapp.presentation.details
+package com.essycynthia.bookapp.presentation.books_details
 
 import com.essycynthia.bookapp.domain.models.BookDetail
-import com.essycynthia.bookapp.domain.models.Books
 
 data class BookDetailState (
     val isLoading: Boolean = false,

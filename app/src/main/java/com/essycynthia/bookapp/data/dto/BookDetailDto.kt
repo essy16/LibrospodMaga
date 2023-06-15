@@ -7,7 +7,7 @@ data class BookDetailDto(
     val count: Int,
     val next: Any,
     val previous: Any,
-    val results: List<Result>
+    val results: Result
 )
 
 fun BookDetailDto.toBookDetail(): BookDetail {

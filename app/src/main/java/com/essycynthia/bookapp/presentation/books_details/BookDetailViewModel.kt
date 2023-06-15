@@ -1,4 +1,4 @@
-package com.essycynthia.bookapp.presentation.details
+package com.essycynthia.bookapp.presentation.books_details
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -7,10 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.essycynthia.bookapp.common.Constants
 import com.essycynthia.bookapp.common.Resource
-import com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases.ChildrenBooksCases
-import com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases.FrenchBooksCases
-import com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases.PopularBookCases
-import com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases.SpanishBooksCases
 import com.essycynthia.bookapp.domain.use_cases.books_cases.getbooksdetails_cases.BookDetailCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
