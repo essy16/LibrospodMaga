@@ -4,5 +4,5 @@ data class Books(
     val count: Int?,
     val next: String?,
     val previous: Any?,
-    val resultDtos: com.essycynthia.bookapp.domain.models.Result?
+    val resultDtos: ResultArray?
 )

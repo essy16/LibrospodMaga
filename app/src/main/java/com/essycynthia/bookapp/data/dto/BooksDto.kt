@@ -1,12 +1,13 @@
 package com.essycynthia.bookapp.data.dto
 
 import com.essycynthia.bookapp.domain.models.Books
+import com.essycynthia.bookapp.domain.models.ResultArray
 
 data class BooksDto(
     val count: Int?,
     val next: String?,
     val previous: Any?,
-    val resultDto: com.essycynthia.bookapp.domain.models.Result?
+    val resultDto: ResultArray?
 )
     fun BooksDto.toBooks(): Books {
         return Books(

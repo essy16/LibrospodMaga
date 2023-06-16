@@ -1,6 +1,7 @@
 package com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases
 
 import com.essycynthia.bookapp.common.Resource
+import com.essycynthia.bookapp.data.dto.BooksDtoArray
 import com.essycynthia.bookapp.data.dto.toBooks
 import com.essycynthia.bookapp.domain.models.Books
 import com.essycynthia.bookapp.domain.repositories.BookRepository
@@ -10,10 +11,11 @@ import retrofit2.HttpException
 import java.io.IOException
 
 class FantasyBooksCases (val bookRepository: BookRepository) {
-     operator fun invoke():Flow<Resource<List<Books>>> = flow {
+     operator fun invoke():Flow<Resource<BooksDtoArray>> = flow {
         try {
             emit(Resource.Loading())
-            val fantasyBooks=bookRepository.getFantasyBooks().map { it.toBooks() }
+            val fantasyBooks=bookRepository.getFantasyBooks()
+                //.map { it.toBooks() }
             emit(Resource.Success(fantasyBooks))
 
         } catch (e: HttpException) {

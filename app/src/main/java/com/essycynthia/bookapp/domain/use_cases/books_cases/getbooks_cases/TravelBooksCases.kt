@@ -1,6 +1,7 @@
 package com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases
 
 import com.essycynthia.bookapp.common.Resource
+import com.essycynthia.bookapp.data.dto.BooksDtoArray
 import com.essycynthia.bookapp.data.dto.toBooks
 import com.essycynthia.bookapp.domain.models.Books
 import com.essycynthia.bookapp.domain.repositories.BookRepository
@@ -11,10 +12,11 @@ import java.io.IOException
 import javax.inject.Inject
 
 class TravelBooksCases @Inject constructor(val bookRepository: BookRepository) {
-     operator fun invoke(): Flow<Resource<List<Books>>> = flow {
+     operator fun invoke(): Flow<Resource<BooksDtoArray>> = flow {
         try {
             emit(Resource.Loading())
-            val travelBooks=bookRepository.getTravelBooks().map { it.toBooks() }
+            val travelBooks=bookRepository.getTravelBooks()
+                //.map { it.toBooks() }
             emit(Resource.Success(travelBooks))
 
         } catch (e: HttpException) {

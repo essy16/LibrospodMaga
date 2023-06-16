@@ -29,11 +29,11 @@ fun BookListScreen(
 
     Box(modifier = Modifier.fillMaxSize()) {
         LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(state.book.orEmpty()) { book ->
+            items(state.book.booksDtoArray) { book ->
                 BookListItem(
                     books = book,
                     onItemClick = {
-                        navController.navigate(Screen.BookDetailScreen.route + "/${book.resultDtos?.idString}")
+                        navController.navigate(Screen.BookDetailScreen.route + "/${book.resultDto?.resultArray?.firstOrNull()!!.idString}")
                     }
                 )
             }

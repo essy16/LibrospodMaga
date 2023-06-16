@@ -6,16 +6,19 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.essycynthia.bookapp.data.dto.BooksDto
+import com.essycynthia.bookapp.data.dto.ResultDto
 import com.essycynthia.bookapp.domain.models.Books
 
 @Composable
 fun BookListItem(
-    books: Books,
-    onItemClick:(Books)->Unit
+    books: BooksDto,
+    onItemClick:(BooksDto)->Unit
 ){
+
     Row(Modifier.fillMaxWidth()
         .clickable { onItemClick(books) }) {
-        Text(text = "${books.resultDtos?.title}")
+        Text(text = books.resultDto?.resultArray?.firstOrNull()!!.title)
 
     }
 
