@@ -15,7 +15,7 @@ class BookDetailCase @Inject constructor(val bookRepository: BookRepository) {
      operator fun invoke(id:String): Flow<Resource<BookDetail>> = flow {
         try {
             emit(Resource.Loading())
-            val book=bookRepository.getBookDetail("id").toBookDetail()
+            val book=bookRepository.getBookDetail(id).toBookDetail()
             emit(Resource.Success(book))
 
         } catch (e: HttpException) {

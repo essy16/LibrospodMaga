@@ -3,36 +3,34 @@ package com.essycynthia.bookapp.data.dto
 import com.essycynthia.bookapp.domain.models.Author
 import com.essycynthia.bookapp.domain.models.Formats
 import com.essycynthia.bookapp.domain.models.Result
-import com.essycynthia.bookapp.domain.models.Translator
+import com.google.gson.annotations.SerializedName
 
 data class ResultDto(
-    val authorDtos: Author,
-    val bookshelves: String,
-    val copyright: Boolean,
-    val download_count: Int,
-    val formatsDto: Formats,
-    val id: Int,
-    val languages: String,
-    val media_type: String,
-    val subjects: String,
-    val title: String,
-    val translatorDtos: Translator
-){
-    val idString: String
-        get() = id.toString()
-}
+    @SerializedName("id") var id: Int? = null,
+    @SerializedName("title") var title: String? = null,
+    @SerializedName("authors") var authors: ArrayList<Author>? = null,
+    @SerializedName("translators") var translators: ArrayList<String>? = null,
+    @SerializedName("subjects") var subjects: ArrayList<String>? = null,
+    @SerializedName("bookshelves") var bookshelves: ArrayList<String>? = null,
+    @SerializedName("languages") var languages: ArrayList<String>? = null,
+    @SerializedName("copyright") var copyright: Boolean? = null,
+    @SerializedName("media_type") var mediaType: String? = null,
+    @SerializedName("formats") var formats: Formats? = null,
+    @SerializedName("download_count") var downloadCount: Int? = null
+)
 
 fun ResultDto.toResult(): com.essycynthia.bookapp.domain.models.Result {
     return Result(
-        authorDtos = authorDtos,
+        authors = authors,
         bookshelves = bookshelves,
-        formatsDto = formatsDto,
-        idString = idString,
+        formats = formats,
+        id = id,
         languages = languages,
-        media_type = media_type,
+        media_type = mediaType,
         subjects = subjects,
         title = title,
-        translatorDtos = translatorDtos,
-        download_count = download_count
+        translators = translators,
+        download_count = downloadCount,
+        copyright = copyright
     )
 }

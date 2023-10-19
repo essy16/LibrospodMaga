@@ -2,7 +2,7 @@ package com.essycynthia.bookapp.domain.models
 
 data class Books(
     val count: Int?,
-    val next: String?,
+    val next: Any?,
     val previous: Any?,
-    val resultDtos: ResultArray?
+    val resultDtos: ArrayList<Result>
 )

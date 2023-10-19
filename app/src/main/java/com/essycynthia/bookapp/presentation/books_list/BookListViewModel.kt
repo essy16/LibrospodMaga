@@ -29,7 +29,7 @@ class BookListViewModel @Inject constructor(
         popularBookCases().onEach { result ->
             when (result) {
                 is Resource.Success -> {
-                    _state.value = BookListState(book = result.data!!)
+                    _state.value = BookListState(book = result.data ?: emptyList())
                     //?: emptyList()
                 }
                 is Resource.Error -> {

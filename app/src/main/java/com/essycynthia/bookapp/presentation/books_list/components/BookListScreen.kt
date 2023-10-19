@@ -5,6 +5,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
@@ -17,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.essycynthia.bookapp.domain.models.Books
+import com.essycynthia.bookapp.domain.models.Result
 import com.essycynthia.bookapp.presentation.Screen
 import com.essycynthia.bookapp.presentation.books_list.BookListViewModel
 @Composable
@@ -28,12 +32,14 @@ fun BookListScreen(
     val state = viewModel.state.value
 
     Box(modifier = Modifier.fillMaxSize()) {
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(state.book.booksDtoArray) { book ->
+        LazyVerticalGrid(
+            GridCells.Fixed(2), modifier = Modifier.fillMaxSize()
+        ) {
+           items(state.book) { book ->
                 BookListItem(
                     books = book,
                     onItemClick = {
-                        navController.navigate(Screen.BookDetailScreen.route + "/${book.resultDto?.resultArray?.firstOrNull()!!.idString}")
+                        navController.navigate(Screen.BookDetailScreen.route + "/${book.resultDtos.firstOrNull()?.id.toString()}")
                     }
                 )
             }

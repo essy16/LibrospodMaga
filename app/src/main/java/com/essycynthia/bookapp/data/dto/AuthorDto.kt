@@ -1,12 +1,14 @@
 package com.essycynthia.bookapp.data.dto
 
 import com.essycynthia.bookapp.domain.models.Author
+import com.google.gson.annotations.SerializedName
 
 data class AuthorDto(
-    val birth_year: Int,
-    val death_year: Int,
-    val name: String
+    @SerializedName("name") var name: String? = null,
+    @SerializedName("birth_year") var birthYear: Int? = null,
+    @SerializedName("death_year") var deathYear: Int? = null
 )
-    fun AuthorDto.toAuthor():Author{
-        return Author(name = name)
-    }
+
+fun AuthorDto.toAuthor(): Author {
+    return Author(name = name)
+}
