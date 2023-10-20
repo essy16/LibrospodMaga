@@ -26,10 +26,10 @@ fun BookDetailScreen(
 
     Box(Modifier.fillMaxSize()) {
         state.book.let { bookDetail ->
-            AsyncImage(
-                model = bookDetail?.results?.formats?.mimeType,
-                contentDescription = "${bookDetail?.results?.title}"
-            )
+//            AsyncImage(
+//                model = bookDetail?.results?.formats?.image,
+//                contentDescription = "${bookDetail?.results?.title}"
+//            )
             Text(text = "${bookDetail?.results?.title}")
 
 

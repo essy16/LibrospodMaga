@@ -12,11 +12,10 @@ import java.io.IOException
 import javax.inject.Inject
 
 class BiographyBooksCases @Inject constructor(val bookRepository: BookRepository) {
-     operator fun invoke(): Flow<Resource<List<Books>>> = flow {
+     operator fun invoke(): Flow<Resource<Books>> = flow {
         try {
             emit(Resource.Loading())
-            val biographyBooks=bookRepository.getBiographyBooks()
-                .map { it.toBooks() }
+            val biographyBooks=bookRepository.getBiographyBooks().toBooks()
             emit(Resource.Success(biographyBooks))
 
         } catch (e:HttpException) {

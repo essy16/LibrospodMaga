@@ -4,5 +4,5 @@ data class Books(
     val count: Int?,
     val next: Any?,
     val previous: Any?,
-    val resultDtos: ArrayList<Result>
+    val result: List<Result>?
 )

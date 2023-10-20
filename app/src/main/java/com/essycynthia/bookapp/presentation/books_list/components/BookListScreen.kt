@@ -13,6 +13,7 @@ import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
@@ -29,17 +30,18 @@ fun BookListScreen(
     viewModel: BookListViewModel = hiltViewModel()
 ) {
 
-    val state = viewModel.state.value
+    val state = viewModel.state.collectAsState().value
 
     Box(modifier = Modifier.fillMaxSize()) {
         LazyVerticalGrid(
-            GridCells.Fixed(2), modifier = Modifier.fillMaxSize()
+            GridCells.Fixed(2),
+            modifier = Modifier.fillMaxSize()
         ) {
-           items(state.book) { book ->
+           items(state.book) {result ->
                 BookListItem(
-                    books = book,
+                    result = result,
                     onItemClick = {
-                        navController.navigate(Screen.BookDetailScreen.route + "/${book.resultDtos.firstOrNull()?.id.toString()}")
+                        navController.navigate(Screen.BookDetailScreen.route + "/${it.id.toString()}")
                     }
                 )
             }
