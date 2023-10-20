@@ -21,8 +21,9 @@ class PopularBookCases @Inject constructor(val bookRepository: BookRepository) {
                     it.toBooks()
                 }
             emit(Resource.Success(popularBooks))
-            Log.d("PopularBookCases", "List of popular books: $popularBooks")
-        } catch (e: HttpException) {
+            Log.d("PopularBookCases", "List of popular results: $popularBooks")
+        }
+        catch (e: HttpException) {
             emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred"))
 
         } catch (e: IOException) {

@@ -25,11 +25,11 @@ fun BookListItem(
           .height(200.dp)
           .clickable { onItemClick(books) }) {
       AsyncImage(
-          model = books.resultDtos.firstOrNull()?.formats?.mimeType.toString(),
-          contentDescription =books.resultDtos.firstOrNull()?.formats?.mimeType.toString(),
+          model = books.resultDtos?.firstOrNull()?.formats?.mimeType.toString(),
+          contentDescription =books.resultDtos?.firstOrNull()?.formats?.mimeType.toString(),
       )
-      Text(text = books.resultDtos.firstOrNull()?.title.toString())
-      Text(text = books.resultDtos.firstOrNull()?.authors?.firstOrNull()?.name.toString())
+      Text(text = books.resultDtos?.firstOrNull()?.title.toString())
+      Text(text = books.resultDtos?.firstOrNull()?.authors?.firstOrNull()?.name.toString())
 
   }
 

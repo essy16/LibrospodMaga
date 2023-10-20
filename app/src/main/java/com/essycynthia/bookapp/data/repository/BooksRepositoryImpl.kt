@@ -9,55 +9,55 @@ import javax.inject.Inject
 class BooksRepositoryImpl @Inject constructor(private val booksApiService: BooksApiService) :
     BookRepository {
     override suspend fun getPopularBooks(): List<BooksDto> {
-        return booksApiService.getPopularBooks().books
+        return booksApiService.getPopularBooks().results
     }
 
     override suspend fun getFrenchBooks():  List<BooksDto> {
-        return booksApiService.getFrenchBooks().books
+        return booksApiService.getFrenchBooks().results
     }
 
     override suspend fun getChildrenBooks():  List<BooksDto> {
-        return booksApiService.getChildrenBooks().books
+        return booksApiService.getChildrenBooks().results
     }
 
     override suspend fun getHistoryBooks():  List<BooksDto> {
-        return booksApiService.getHistoryBooks().books
+        return booksApiService.getHistoryBooks().results
     }
 
     override suspend fun getFantasyBooks():  List<BooksDto> {
-        return booksApiService.getFantasyBooks().books
+        return booksApiService.getFantasyBooks().results
     }
 
     override suspend fun getBiographyBooks():  List<BooksDto> {
-        return booksApiService.getBiographyBooks().books
+        return booksApiService.getBiographyBooks().results
     }
 
     override suspend fun getTechnologyBooks():  List<BooksDto> {
-        return booksApiService.getTechnologyBooks().books
+        return booksApiService.getTechnologyBooks().results
     }
 
     override suspend fun getMysteryBooks():  List<BooksDto> {
-        return booksApiService.getMysteryBooks().books
+        return booksApiService.getMysteryBooks().results
     }
 
     override suspend fun getLawBooks():  List<BooksDto> {
-        return booksApiService.getLawBooks().books
+        return booksApiService.getLawBooks().results
     }
 
     override suspend fun getCookingBooks():  List<BooksDto> {
-        return booksApiService.getCookingBooks().books
+        return booksApiService.getCookingBooks().results
     }
 
     override suspend fun getArtBooks():  List<BooksDto> {
-        return booksApiService.getArtBooks().books
+        return booksApiService.getArtBooks().results
     }
 
     override suspend fun getTravelBooks(): List<BooksDto> {
-        return booksApiService.getTravelBooks().books
+        return booksApiService.getTravelBooks().results
     }
 
     override suspend fun getSpanishBooks():  List<BooksDto> {
-        return booksApiService.getSpanishBooks().books
+        return booksApiService.getSpanishBooks().results
     }
 
     override suspend fun getBookDetail(id: String): BookDetailDto{

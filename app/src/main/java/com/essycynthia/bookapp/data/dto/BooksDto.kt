@@ -8,15 +8,15 @@ data class BooksDto(
     @SerializedName("count") var count: Int? = null,
     @SerializedName("next") var next: String? = null,
     @SerializedName("previous") var previous: String? = null,
-    @SerializedName("results") var results: ArrayList<Result> = arrayListOf()
+    @SerializedName("results") var results: List<Result?>? = null
 
 )
 
 fun BooksDto.toBooks(): Books {
     return Books(
-        count = count,
-        next = next,
-        previous = previous,
+//        count = count,
+//        next = next,
+//        previous = previous,
         resultDtos = results
 
     )

@@ -11,51 +11,51 @@ interface BooksApiService {
     @GET("books?ids=1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100")
     suspend fun getPopularBooks(): BooksDtoArray
 
-    @GET("books?languages=fr")
+    @GET("results?languages=fr")
     suspend fun getFrenchBooks(): BooksDtoArray
 
-    @GET("books?languages=es")
+    @GET("results?languages=es")
     suspend fun getSpanishBooks(): BooksDtoArray
 
-    @GET("books?topic=Children")
+    @GET("results?topic=Children")
     suspend fun getChildrenBooks(): BooksDtoArray
 
-    @GET("books?topic=History")
+    @GET("results?topic=History")
 
     suspend fun getHistoryBooks(): BooksDtoArray
 
-    @GET("books?topic=Fantasy")
+    @GET("results?topic=Fantasy")
 
     suspend fun getFantasyBooks(): BooksDtoArray
 
-    @GET("books?topic=Biography")
+    @GET("results?topic=Biography")
 
     suspend fun getBiographyBooks(): BooksDtoArray
 
-    @GET("books?topic=Technology")
+    @GET("results?topic=Technology")
 
     suspend fun getTechnologyBooks(): BooksDtoArray
 
-    @GET("books?topic=Mystery")
+    @GET("results?topic=Mystery")
 
     suspend fun getMysteryBooks(): BooksDtoArray
 
-    @GET("books?topic=Law")
+    @GET("results?topic=Law")
 
     suspend fun getLawBooks(): BooksDtoArray
 
-    @GET("books?topic=Cooking")
+    @GET("results?topic=Cooking")
 
     suspend fun getCookingBooks(): BooksDtoArray
 
-    @GET("books?topic=Art")
+    @GET("results?topic=Art")
 
     suspend fun getArtBooks(): BooksDtoArray
 
-    @GET("books?topic=TRAVEL")
+    @GET("results?topic=TRAVEL")
     suspend fun getTravelBooks(): BooksDtoArray
 
-    @GET("books?ids={id}")
+    @GET("results?ids={id}")
     suspend fun getBookDetail(@Path("id") id: String): BookDetailResponse
 
 
