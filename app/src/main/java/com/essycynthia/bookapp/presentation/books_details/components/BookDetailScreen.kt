@@ -30,7 +30,7 @@ fun BookDetailScreen(
 //                model = bookDetail?.results?.formats?.image,
 //                contentDescription = "${bookDetail?.results?.title}"
 //            )
-            Text(text = "${bookDetail?.results?.title}")
+            Text(text = "${bookDetail?.result?.firstOrNull()?.authors?.firstOrNull()?.name}")
 
 
             if (state.error.isNotBlank()) {
