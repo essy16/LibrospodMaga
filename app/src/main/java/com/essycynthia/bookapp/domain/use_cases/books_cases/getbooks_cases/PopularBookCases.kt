@@ -12,14 +12,11 @@ import java.io.IOException
 import javax.inject.Inject
 
 class PopularBookCases @Inject constructor(val bookRepository: BookRepository) {
-    operator fun invoke(): Flow<Resource<List<Books>>> = flow {
+    operator fun invoke(): Flow<Resource<Books>> = flow {
 
         try {
             emit(Resource.Loading())
-            val popularBooks = bookRepository.getPopularBooks()
-                .map {
-                    it.toBooks()
-                }
+            val popularBooks = bookRepository.getPopularBooks().toBooks()
             emit(Resource.Success(popularBooks))
             Log.d("PopularBookCases", "List of popular results: $popularBooks")
         }

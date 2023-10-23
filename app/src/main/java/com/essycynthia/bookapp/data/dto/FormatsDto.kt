@@ -5,21 +5,25 @@ import com.google.gson.annotations.SerializedName
 
 data class FormatsDto(
     @SerializedName("application/epub+zip")
-    val application_epub_zip: String,
+    val applicationepubzip: String,
+    @SerializedName("application/octet-stream")
+    val applicationOctetStream: String,
     @SerializedName("application/rdf+xml")
-    val application_rdf_xml: String,
+    val applicationRdfXml: String,
     @SerializedName("application/x-mobipocket-ebook")
-    val application_x_mobipocket_ebook: String,
+    val applicationxMobipocketEbook: String,
     @SerializedName("image/jpeg")
-    val mimeType: String? = null,
+    val imageJpeg: String,
     @SerializedName("text/html")
-    val mimeTypeText: String? = null,
+    val textHTML: String,
     @SerializedName("text/plain")
-    val text_plain: String,
-    @SerializedName("text/plain; charset=us-asciival ")
-    val text_plain_charset_us_asciival: String,
+    val textPlain: String,
+    @SerializedName("text/plain; charset=us-ascii")
+    val textPlainCharsetUsAscii: String
 )
 
 fun FormatsDto.toFormats(): Formats {
-    return Formats(mimeType = mimeType, mimeTypeText = mimeTypeText)
+    return Formats(
+        image = imageJpeg
+    )
 }
