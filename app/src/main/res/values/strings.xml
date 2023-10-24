@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">Lib</string>
     <string name="popular_books">Popular Books</string>
+    <string name="children_books">Children Books</string>
+    <string name="art_books">Art Books</string>
+    <string name="biography_books">Biography Books</string>
+    <string name="cooking_books">Cooking Books</string>
+    <string name="french_books">French Books</string>
+    <string name="fantasy_books">Fantasy Books</string>
+    <string name="history_books">History Books</string>
+    <string name="law_books">Law Books</string>
+    <string name="mystery_books">Mystery Books</string>
+    <string name="spanish_books">Spanish Books</string>
+    <string name="technology_books">Technology Books</string>
+    <string name="travel_books">Travel Books</string>
     <string name="what_do_you_want">What do you want to read today?</string>
     <string name="welcome_back">Welcome back</string>
     <string name="sponsor_me">Sponsor me</string>
