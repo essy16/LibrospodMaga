@@ -119,21 +119,24 @@ fun BookDetailScreen(
             state.book.let { bookDetail ->
                 Text(
                     text = "${bookDetail?.result?.firstOrNull()?.authors?.firstOrNull()?.name}",
-                    color = MaterialTheme.colors.primaryVariant
+                    color = MaterialTheme.colors.primaryVariant,
+                    textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = stringResource(
                         R.string.languages
                     ) + "  ${bookDetail?.result?.firstOrNull()?.languages}",
-                    color = MaterialTheme.colors.primaryVariant
+                    color = MaterialTheme.colors.primaryVariant,
+                    textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
                     text = stringResource(
                         R.string.downloads
                     ) + " ${bookDetail?.result?.firstOrNull()?.download_count}",
-                    color = MaterialTheme.colors.primaryVariant
+                    color = MaterialTheme.colors.primaryVariant,
+                    textAlign = TextAlign.Center
                 )
 
 

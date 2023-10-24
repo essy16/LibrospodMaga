@@ -50,7 +50,17 @@ class BookListViewModel @Inject constructor(
 
         getPopularBooks()
         getChildrenBooks()
-
+        getMysteryBooks()
+        getSpanishBooks()
+        getTechnologyBooks()
+        getTravelBooks()
+        getCookingBooks()
+        getFantasyBooks()
+        getBiographyBooks()
+        getFrenchBooks()
+        getHistoryBooks()
+        getArtBooks()
+        getLawBooks()
     }
 
     private fun getPopularBooks() {
