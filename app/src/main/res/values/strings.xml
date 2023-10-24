@@ -3,4 +3,7 @@
     <string name="popular_books">Popular Books</string>
     <string name="what_do_you_want">What do you want to read today?</string>
     <string name="welcome_back">Welcome back</string>
+    <string name="sponsor_me">Sponsor me</string>
+    <string name="downloads">Downloads :</string>
+    <string name="languages">Languages :</string>
 </resources>

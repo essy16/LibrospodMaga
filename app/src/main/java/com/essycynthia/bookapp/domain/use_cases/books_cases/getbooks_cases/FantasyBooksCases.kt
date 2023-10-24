@@ -9,8 +9,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class FantasyBooksCases (val bookRepository: BookRepository) {
+class FantasyBooksCases @Inject constructor (val bookRepository: BookRepository) {
      operator fun invoke():Flow<Resource<Books>> = flow {
         try {
             emit(Resource.Loading())

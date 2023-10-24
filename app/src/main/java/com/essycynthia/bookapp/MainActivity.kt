@@ -6,6 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -25,9 +29,10 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
+                    color = MaterialTheme.colors.primary
                 ) {
                     val navController = rememberNavController()
+
                     NavHost(
                         navController = navController,
                         startDestination = Screen.BookListScreen.route
@@ -40,7 +45,7 @@ class MainActivity : ComponentActivity() {
                         composable(
                             route = Screen.BookDetailScreen.route + "/{id}"
                         ) {
-                            BookDetailScreen()
+                            BookDetailScreen(navController = navController)
                         }
                     }
                 }
