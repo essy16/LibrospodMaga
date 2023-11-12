@@ -1,14 +1,12 @@
-package com.essycynthia.bookapp.data.dto
+package com.essycynthia.bookapp.data.remote
 
-import com.essycynthia.bookapp.domain.models.Author
-import com.essycynthia.bookapp.domain.models.Formats
 import com.essycynthia.bookapp.domain.models.Result
 import com.google.gson.annotations.SerializedName
 
 data class ResultDto(
     @SerializedName("id") var id: Int? = null,
     @SerializedName("title") var title: String? = null,
-    @SerializedName("authors") var authors: ArrayList<Author>? = null,
+    @SerializedName("authors") var authors: ArrayList<AuthorDto>? = null,
     @SerializedName("subjects") var subjects: ArrayList<String>? = null,
     @SerializedName("bookshelves") var bookshelves: ArrayList<String>? = null,
     @SerializedName("languages") var languages: ArrayList<String>? = null,
@@ -20,7 +18,9 @@ data class ResultDto(
 
 fun ResultDto.toResult(): Result {
     return Result(
-        authors = authors,
+        authors = authors?.map {
+            it.toAuthor()
+        },
         bookshelves = bookshelves,
         formats = formats?.toFormats(),
         id = id,

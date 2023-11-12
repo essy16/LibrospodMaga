@@ -1,4 +1,4 @@
-package com.essycynthia.bookapp.data.dto
+package com.essycynthia.bookapp.data.remote
 
 import com.essycynthia.bookapp.domain.models.Author
 import com.google.gson.annotations.SerializedName

@@ -1,6 +1,7 @@
 package com.essycynthia.bookapp.presentation.books_list.components
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -20,14 +21,18 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.DrawerValue
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
+import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.rememberDrawerState
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.Switch
@@ -51,6 +56,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import com.essycynthia.bookapp.R
 import com.essycynthia.bookapp.presentation.Screen
 import com.essycynthia.bookapp.presentation.books_list.BookListViewModel
@@ -123,7 +129,8 @@ fun BookListScreen(
             },
 
             content = {
-                Column(modifier = Modifier.fillMaxSize()) {
+                Column(modifier = Modifier.fillMaxSize()
+                    ) {
                     Column(Modifier.fillMaxWidth(0.5f)) {
                         Text(
                             text = stringResource(id = R.string.welcome_back) + ", Esther",
@@ -138,16 +145,7 @@ fun BookListScreen(
                             modifier = Modifier.padding(vertical = 12.dp)
                         )
                     }
-                    SearchBar(
-                        hint = "Search...",
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(16.dp)
 
-                    )
-                    {
-
-                    }
                     Column {
                         Box(modifier = Modifier.fillMaxSize()) {
                             LazyColumn(
@@ -190,6 +188,7 @@ fun BookListScreen(
 
                                     ) {
                                         items(state.childrenBookS) { result ->
+                                            Log.i("tag", "Children: ${state.childrenBookS}")
                                             BookListItem(
                                                 result = result
                                             ) {
@@ -232,6 +231,7 @@ fun BookListScreen(
 
                                     ) {
                                         items(state.biographyBookS) { result ->
+
                                             BookListItem(
                                                 result = result
                                             ) {
@@ -451,77 +451,4 @@ fun BookListScreen(
 
 
 }
-
-@Composable
-fun SearchBar(
-    modifier: Modifier = Modifier,
-    hint: String = "",
-    onSearch: (String) -> Unit = {},
-
-) {
-    var text by remember {
-        mutableStateOf("")
-    }
-    var isHintDisplayed by remember {
-        mutableStateOf(hint != "")
-    }
-
-    Box(modifier = modifier) {
-        BasicTextField(
-            value = text,
-            onValueChange = {
-                text = it
-                onSearch(it)
-            },
-            maxLines = 1,
-            singleLine = true,
-            modifier = Modifier
-                .fillMaxWidth()
-                .shadow(5.dp, CircleShape)
-                .background(
-                    MaterialTheme.colors.primaryVariant, CircleShape
-                )
-                .padding(horizontal = 12.dp, vertical = 12.dp)
-
-        )
-        if (isHintDisplayed) {
-            Text(
-                text = hint,
-                color = Color.LightGray,
-                modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp)
-            )
-        }
-    }
-}
-//@Composable
-//fun allBooks(parentList:ArrayList<ParentDataClass>){
-//    LazyColumn(){
-//        items(){
-//            ColumnItemUi(
-//                parentList = parentList,
-//                itemIndex = it
-//            )
-//        }
-//    }
-//}
-//
-//@Composable
-//fun ColumnItemUi(parentList: ArrayList<ParentDataClass>, itemIndex: Int) {
-//    Card {
-//        Text(text = parentList[itemIndex].title)
-//        LazyRow(){
-//            items(){
-//                RowItemUi()
-//            }
-//        }
-//    }
-//}
-//
-//@Composable
-//fun RowItemUi() {
-//    Column {
-//        BookListItem(result =, onItemClick =)
-//    }
-//}
-
 

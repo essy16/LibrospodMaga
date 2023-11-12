@@ -1,10 +1,8 @@
 package com.essycynthia.bookapp.data.datasource
 
-import com.essycynthia.bookapp.data.dto.BookDetailDto
-import com.essycynthia.bookapp.data.dto.BookDetailResponse
-import com.essycynthia.bookapp.data.dto.BooksDto
+import com.essycynthia.bookapp.data.remote.BookDetailDto
+import com.essycynthia.bookapp.data.remote.BooksDto
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface BooksApiService {
@@ -59,6 +57,9 @@ interface BooksApiService {
 
     @GET("books")
     suspend fun getBookDetail(@Query("ids") id: String): BookDetailDto
+
+    @GET("books")
+    suspend fun searchBooks(@Query("search") authorOrBook: String): BooksDto
 
 
 }
