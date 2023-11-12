@@ -1,8 +1,7 @@
 package com.essycynthia.bookapp.domain.use_cases.books_cases.getbooksdetails_cases
 
 import com.essycynthia.bookapp.common.Resource
-import com.essycynthia.bookapp.data.dto.BookDetailDto
-import com.essycynthia.bookapp.data.dto.toBookDetail
+import com.essycynthia.bookapp.data.remote.toBookDetail
 import com.essycynthia.bookapp.domain.models.BookDetail
 import com.essycynthia.bookapp.domain.repositories.BookRepository
 import kotlinx.coroutines.flow.Flow

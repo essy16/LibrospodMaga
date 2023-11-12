@@ -1,8 +1,8 @@
 package com.essycynthia.bookapp.data.repository
 
 import com.essycynthia.bookapp.data.datasource.BooksApiService
-import com.essycynthia.bookapp.data.dto.BookDetailDto
-import com.essycynthia.bookapp.data.dto.BooksDto
+import com.essycynthia.bookapp.data.remote.BookDetailDto
+import com.essycynthia.bookapp.data.remote.BooksDto
 import com.essycynthia.bookapp.domain.repositories.BookRepository
 import javax.inject.Inject
 
@@ -63,6 +63,10 @@ class BooksRepositoryImpl @Inject constructor(private val booksApiService: Books
 
     override suspend fun getBookDetail(id: String): BookDetailDto{
         return booksApiService.getBookDetail(id)
+    }
+
+    override suspend fun searchBooks(authorOrBook: String): BooksDto {
+        return booksApiService.searchBooks(authorOrBook)
     }
 
 

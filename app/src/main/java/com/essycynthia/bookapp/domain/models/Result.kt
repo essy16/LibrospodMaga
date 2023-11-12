@@ -1,8 +1,5 @@
 package com.essycynthia.bookapp.domain.models
 
-import com.essycynthia.bookapp.data.dto.FormatsDto
-import com.essycynthia.bookapp.data.dto.TranslatorDto
-
 data class Result(
     val authors: List<Author>? = null,
     val bookshelves: List<String>? = null,

@@ -1,9 +1,10 @@
-package com.essycynthia.bookapp.data.dto
+package com.essycynthia.bookapp.data.remote
 
-import com.essycynthia.bookapp.domain.models.BookDetail
-import com.essycynthia.bookapp.domain.models.Result
+import com.essycynthia.bookapp.domain.models.Books
 
-data class BookDetailDto(
+data class BooksDto(
+
+
     val count: Int?,
 
     val next: String?,
@@ -11,10 +12,12 @@ data class BookDetailDto(
     val previous: String?,
 
     val results: List<ResultDto>?
+
 )
 
-fun BookDetailDto.toBookDetail(): BookDetail {
-    return BookDetail(
+fun BooksDto.toBooks(): Books {
+    return Books(
+
         count = count,
         next = next,
         previous = previous,

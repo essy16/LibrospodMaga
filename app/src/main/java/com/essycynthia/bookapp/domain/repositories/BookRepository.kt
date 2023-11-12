@@ -1,7 +1,8 @@
 package com.essycynthia.bookapp.domain.repositories
 
-import com.essycynthia.bookapp.data.dto.BookDetailDto
-import com.essycynthia.bookapp.data.dto.BooksDto
+import com.essycynthia.bookapp.data.remote.BookDetailDto
+import com.essycynthia.bookapp.data.remote.BooksDto
+import retrofit2.http.Query
 
 interface BookRepository {
     suspend fun getPopularBooks(): BooksDto
@@ -18,6 +19,9 @@ interface BookRepository {
     suspend fun getTravelBooks():  BooksDto
     suspend fun getSpanishBooks():  BooksDto
     suspend fun getBookDetail(id:String): BookDetailDto
+
+    suspend fun searchBooks(@Query("search") authorOrBook: String): BooksDto
+
 
 
 

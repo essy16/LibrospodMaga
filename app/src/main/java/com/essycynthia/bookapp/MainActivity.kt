@@ -6,17 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.essycynthia.bookapp.presentation.Screen
-import com.essycynthia.bookapp.presentation.books_list.components.BookListScreen
-import com.essycynthia.bookapp.presentation.books_details.components.BookDetailScreen
+import com.essycynthia.bookapp.presentation.bottom_navigation.Navigation
 import com.essycynthia.bookapp.ui.theme.BookAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,23 +22,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.primary
                 ) {
-                    val navController = rememberNavController()
+                  Navigation()
 
-                    NavHost(
-                        navController = navController,
-                        startDestination = Screen.BookListScreen.route
-                    ) {
-                        composable(
-                            route = Screen.BookListScreen.route
-                        ) {
-                            BookListScreen(navController)
-                        }
-                        composable(
-                            route = Screen.BookDetailScreen.route + "/{id}"
-                        ) {
-                            BookDetailScreen(navController = navController)
-                        }
-                    }
                 }
             }
         }
