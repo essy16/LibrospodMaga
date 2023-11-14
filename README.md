@@ -9,7 +9,8 @@ LibrospodMaga is an Android application developed using Jetpack Compose, Retrofi
 - Integration with Retrofit for efficient network requests
 - Dependency injection facilitated by Dagger-Hilt
 - Efficient image loading with Coil
-- Implemented using the principles of Clean Architecture and MVVM design 
+- Implemented using the principles of Clean Architecture and MVVM design
+- One can search for his / her favorite book or author.
 pattern
 ## Technologies Used
 - **Jetpack Compose**: Used for building the user interface, providing a modern and declarative approach to UI development.
@@ -42,7 +43,6 @@ The app is built using the Modular MVVM architectural pattern and makes heavy us
 
 ## Planned Features
 
-- Search implementation for easy book discovery
 - Payment integration for seamless book purchase
 - UI improvements for an enhanced user interface
 - Local caching for improved performance and offline access
