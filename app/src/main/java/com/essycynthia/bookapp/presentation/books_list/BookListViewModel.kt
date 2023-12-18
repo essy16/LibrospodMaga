@@ -18,6 +18,7 @@ import com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases.Spani
 import com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases.TechnologyBooksCases
 import com.essycynthia.bookapp.domain.use_cases.books_cases.getbooks_cases.TravelBooksCases
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
@@ -77,6 +78,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -112,6 +114,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -147,6 +150,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -182,6 +186,8 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
+
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -217,6 +223,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -252,6 +259,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -287,6 +295,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -322,6 +331,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -357,6 +367,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -392,6 +403,7 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -427,6 +439,8 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
+
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -462,6 +476,8 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
+
                     _state.update {
                         it.copy(
                             isLoading = false,
@@ -497,6 +513,8 @@ class BookListViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
+                    delay(20000)
+
                     _state.update {
                         it.copy(
                             isLoading = false,
