@@ -8,6 +8,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -55,7 +56,8 @@ fun Navigation() {
             }
         }
     }) {
-        BottomNavGraph(navContoller = navController)
+            BottomNavGraph(navController = navController)
+
 
     }
 }
