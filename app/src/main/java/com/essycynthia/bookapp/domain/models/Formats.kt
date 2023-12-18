@@ -1,8 +1,9 @@
 package com.essycynthia.bookapp.domain.models
 
+import com.google.gson.annotations.SerializedName
+
 data class Formats(
-    val mimeType: String? = null,
-    val mimeTypeText: String? = null
+    val image:String?
 
 )
 

@@ -1,23 +1,27 @@
 package com.essycynthia.bookapp.domain.repositories
 
-import com.essycynthia.bookapp.data.dto.BookDetailDto
-import com.essycynthia.bookapp.data.dto.BooksDto
+import com.essycynthia.bookapp.data.remote.BookDetailDto
+import com.essycynthia.bookapp.data.remote.BooksDto
+import retrofit2.http.Query
 
 interface BookRepository {
-    suspend fun getPopularBooks(): List<BooksDto>
-    suspend fun getFrenchBooks():  List<BooksDto>
-    suspend fun getChildrenBooks():  List<BooksDto>
-    suspend fun getHistoryBooks():  List<BooksDto>
-    suspend fun getFantasyBooks():  List<BooksDto>
-    suspend fun getBiographyBooks():  List<BooksDto>
-    suspend fun getTechnologyBooks():  List<BooksDto>
-    suspend fun getMysteryBooks(): List<BooksDto>
-    suspend fun getLawBooks():  List<BooksDto>
-    suspend fun getCookingBooks():  List<BooksDto>
-    suspend fun getArtBooks(): List<BooksDto>
-    suspend fun getTravelBooks():  List<BooksDto>
-    suspend fun getSpanishBooks():  List<BooksDto>
+    suspend fun getPopularBooks(): BooksDto
+    suspend fun getFrenchBooks(): BooksDto
+    suspend fun getChildrenBooks():  BooksDto
+    suspend fun getHistoryBooks():  BooksDto
+    suspend fun getFantasyBooks():  BooksDto
+    suspend fun getBiographyBooks():  BooksDto
+    suspend fun getTechnologyBooks():  BooksDto
+    suspend fun getMysteryBooks(): BooksDto
+    suspend fun getLawBooks():  BooksDto
+    suspend fun getCookingBooks():  BooksDto
+    suspend fun getArtBooks(): BooksDto
+    suspend fun getTravelBooks():  BooksDto
+    suspend fun getSpanishBooks():  BooksDto
     suspend fun getBookDetail(id:String): BookDetailDto
+
+    suspend fun searchBooks(@Query("search") authorOrBook: String): BooksDto
+
 
 
 
